@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>runing | Home </title> 
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+    <script src="js/jquery.min.js" ></script>
+    <script src="js/highcharts-ie9.js"></script>
+    <script src="js/highcharts.js"></script>
+    <script src="js/group-cetagory.js"></script>
+    <!--[if lt IE 9]>
+        <script src="js/highcharts-ie9.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="style.css"  />
+</head>
+<body class="loading">
+    <div id="wrapper"><!--start wrapper-->
+        <div class="container"><!--start container-->
+            <div class="center-content">
+                <div id="container" style="width:100%; height:400px;"></div>
+            </div>
+        </div><!--start container-->
+    </div><!--//end #wrapper-->
+
+    <script>
+        var myChart = Highcharts.chart('container', {
+            chart:{
+                type: 'column'
+            },
+            
+            xAxis: {
+                categories: [ 
+                    {
+                        name:'2017',
+                        categories:['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN','JUL', 'AUG', 'SEP','OCT','NOB','DEC']
+                    }
+                ]
+            },
+           
+
+            plotOptions: {
+                column: {
+                    borderRadius: 2
+                }
+            },
+ 
+            series: [
+                {
+                    name: 'name1',
+                    marker:{enabled:false},
+                    data: [90,54,87,62,80,85,78,95,48,76,52,65]
+                },{
+                    name: 'name2',
+                    marker:{enabled:false},
+                    data:[99,88,77,55,48,88,66,99,88,77,55,66]
+                },
+                {
+                    name: 'name3',
+                    marker:{enabled:false},
+                    data:[88,99,77,55,44,88,66,88,89,75,89,87]
+                },
+                {
+                    name: 'name4',
+                    marker:{enabled:false},
+                    data:[98,87,87,75,84,68,46,98,59,75,82,80]
+                },
+                {
+                    name: 'name5',
+                    marker:{enabled:false},
+                    data:[68,69,87,95,48,78,98,76,89,57,89,85]
+                }
+            ]
+        });
+    </script>
+</body>
+</html>

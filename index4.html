@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+   	<title>runing | Home </title> 
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+    <script src="js/jquery.min.js" ></script>
+    <script src="js/highcharts-ie9.js"></script>
+    <script src="js/highcharts.js"></script>
+    <script src="js/group-cetagory.js"></script>
+    <!--[if lt IE 9]>
+        <script src="js/highcharts-ie9.js"></script>
+    <![endif]-->
+	<link rel="stylesheet" href="style.css"  />
+
+    <style>
+        #mydiv { -webkit-transition: all 0.3s;  -moz-transition: all 0.3s; -o-transition: all 0.3s; transition: all 0.3s; }
+    </style>
+   
+</head>
+<body class="loading">
+	<div id="wrapper"><!--start wrapper-->
+        <div class="container"><!--start container-->
+            <h1 id="mydiv">Hello</h1>
+            <div class="center-content">
+                <div id="discount_chart" style="height: 400px"></div>
+            </div>
+        </div><!--start container-->
+	</div><!--//end #wrapper-->
+
+
+     <script>
+        jQuery("#mydiv").mouseenter(function(event) {
+            jQuery(this).css({
+                opacity: '0'
+            });
+        });
+        jQuery("#mydiv").mouseleave(function(event) {
+            jQuery(this).css({
+                opacity: '1'
+            });
+        });
+    </script>
+
+
+    <script>
+       
+var chart2 = new Highcharts.Chart({
+    chart: {
+        renderTo: 'discount_chart',
+        type: 'column'
+    },
+        xAxis: {
+            categories: [
+                {
+                    name:'2017',
+                    categories:['JAN','FEB','MAR','APR','MAY','JUN','JUL'],
+                },
+                {
+                    name:'2018',
+                    categories:['JAN','FEB']
+                },
+                {
+                    name:'2019',
+                    categories:['JAN','FEB']
+                }
+            ]
+        },
+
+
+        series:[
+            {
+                data:[20,500,95,698,658]
+            }
+        ],
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'top',
+            x: 20,
+            y: 100,
+            borderWidth: 0
+        },
+        plotOptions: {
+            series: {
+                marker: {
+                    enabled: false,
+                    states: {
+                        hover: {
+                            enabled: true
+                        }
+                    }
+            }},
+           
+            line:{
+                animation:{
+                    duration:1500
+                }
+            },
+
+            spline:{
+                lineWidth: 10,
+                marker: { enabled: false}
+                
+            }
+        }
+        // series: [{
+        //             type:'column',
+        //             data: [50,99,88,77,55,44,8,8,77],
+        //             color: '#5383ec',
+        //             lineWidth: 10,
+        //             pointStart: 0,
+        //             marker : {enabled:false, symbol : 'circle',radius : 10 , fillColor: '#5383ec' }
+        //     },
+        //     {
+        //         type:'spline',
+        //         lineWidth: 10,
+        //         name:'2017',
+        //         data:[99,88,77,29,48,88,46,99,88,77,55,66]
+        //     },
+        //     {
+        //         type:'spline',
+        //         name:'2018',
+        //         lineWidth: 10,
+        //         marker: {
+        //             enabled: false,
+        //             color:'#879095'
+        //         },
+        //         data:[98,99,87,85,84,83,85,84,86,89,78,75]
+        //     }
+        // ]
+});
+
+    </script>
+</body>
+</html>

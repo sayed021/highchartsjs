@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+   	<title>runing | Home </title> 
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+    <script src="js/jquery.min.js" ></script>
+    <script src="js/highcharts-ie9.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="js/highcharts.js"></script>
+    <script src="js/group-cetagory.js"></script>
+    <!--[if lt IE 9]>
+        <script src="js/highcharts-ie9.js"></script>
+    <![endif]-->
+	<link rel="stylesheet" href="style.css"  />
+</head>
+<body class="loading">
+	<div id="wrapper"><!--start wrapper-->
+        <div class="container"><!--start container-->
+            <div class="center-content">
+                <div class="pie1">
+                    <div id="container" style="position:absolute; left:0px; top:0px;"></div>
+                    <div id="addText" style="position:absolute; left:0px; top:-15px; color:#E0B88F;"></div>
+                </div>
+
+        </div><!--start container-->
+	</div><!--//end #wrapper-->
+
+    <script>
+        
+        var chart = new Highcharts.Chart({
+            chart: {
+                renderTo: 'container',
+                type: 'pie'
+            },
+            plotOptions: {
+                pie: {
+                    innerSize: '45%',
+                    colors:['#C79F76','#C79F60','#C79F40','#C79F35']
+                }
+            },
+            series: [{
+                data: [
+                    ['Firefox', 50]
+                ]
+            }]
+        },                         
+        function(chart) { // on complete
+            var textX = chart.plotLeft + (chart.plotWidth  * 0.5);
+            var textY = chart.plotTop  + (chart.plotHeight * 0.5);
+            var span = '<span id="pieChartInfoText" style="position:absolute; text-align:center; ">';
+            span += '<span style="font-size: 60px; line-height:30px; font-width:900; ">%</span><br>';
+            span += '</span>';
+
+            $("#addText").append(span);
+            span = $('#pieChartInfoText');
+            span.css('left', textX + (span.width() * -0.5));
+            span.css('top', textY + (span.height() * -0.5));
+        });
+
+    </script>
+</body>
+</html>

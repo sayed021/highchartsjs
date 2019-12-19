@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+   	<title>runing | Home </title> 
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+    <script src="js/jquery.min.js" ></script>
+    <script src="js/highcharts-ie9.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="js/highcharts.js"></script>
+    <script src="js/group-cetagory.js"></script>
+    <!--[if lt IE 9]>
+        <script src="js/highcharts-ie9.js"></script>
+    <![endif]-->
+	<link rel="stylesheet" href="style.css"  />
+</head>
+<body class="loading">
+	<div id="wrapper"><!--start wrapper-->
+        <div class="container"><!--start container-->
+            <div class="center-content">
+                <div id="container" style="width:100%; height:400px;"></div>
+            </div>
+        </div><!--start container-->
+	</div><!--//end #wrapper-->
+
+    <script>
+        
+        var myChart = Highcharts.chart('container', {
+            chart:{
+                type: 'column'
+            },
+            xAxis: {
+                categories: [
+                    {
+                        name:'2016',
+                        categories:['OCT','NOB','DEC']
+                    },
+                    {
+                        name:'2017',
+                        categories:['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN','JUL', 'AUG', 'SEP','OCT','NOB','DEC']
+                    },
+                     {
+                        name:'2018',
+                        categories:['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN','JUL', 'AUG', 'SEP','OCT','NOB','DEC']
+                    },{
+                        name:'2019',
+                        categories:['JAN', 'FEB', 'MAR']
+                    }
+                ]
+            },
+            yAxis: [
+                {
+                    labels: {
+                        formatter: function() {
+                           return "$"+ this.value;
+                        }
+                      },
+                    title: {
+                        text: ''
+                    },
+                    opposite: false
+                },
+                {
+                    labels: {
+                        formatter: function() {
+                           return this.value + "k";
+                        }
+                      },
+                    title: {
+                        text: ''
+                    },
+                    opposite: true
+                }
+            ],
+          
+                
+            plotOptions: {
+                column: {
+                    borderRadius: 2
+                },
+                line:{
+                    animation:{duration:1500},
+                    lineWidth: 10
+                }
+            },
+            series: [
+                {
+                    name:'Label 1', 
+                    data: [150,154,187, 162,180,185,78,95,148,176,152,165,189,145,178,198,148,176,189,157,189,148,179,180,188,187,189,250,210,200],
+                    legend:0
+                }
+                ,{   
+                    type:'spline',
+                    name:' ',
+                    lineWidth: 10,
+                    linecap:'graph',
+                    lineColor:'#879095',
+                    marker: {
+                        enabled: false,
+                        color:'#879095'
+                    },
+                    name:'Label 2',
+                    data:[150,154,187, 162,180,185,78,95,148,176,152,165,189,145,178,198,148,176,189,157,189,148,179,180,188,187,189,260,270,280],
+                    yAxis:1,
+                    legend:1
+                }
+            ]
+        });
+ 
+    </script>
+</body>
+</html>
