@@ -1,3 +1,3 @@
 # highchartsjs
 High chart demos customization 
-![map screenshot](screenshot.jpg)
+![High chart screenshot](images/screenshot.jpg)
